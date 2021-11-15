@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>Equivariant Spherical Deconvolution</title>
+		<link rel="stylesheet" href="./css/bulma.min.css">
+        <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+        <link rel="stylesheet" href="./css/bulma-slider.min.css">
+        <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+        <link rel="stylesheet"
+                href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src="./js/fontawesome.all.min.js"></script>
+        <script src="./js/bulma-carousel.min.js"></script>
+        <script src="./js/bulma-slider.min.js"></script>
+        <script src="./js/index2.js"></script>
+	</head>
+	<body>
+        <!-- CDN Link to Three.js -->
+        <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/TrackballControls.js"></script>
+
+        <section class="hero">
+            <div class="hero-body">
+              <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">ESD: Equivariant Spherical Deconvolution</h1>
+                    <div class="is-size-5 publication-authors">
+                      <span class="author-block">
+                        <a href="https://github.com/AxelElaldi">Axel Elaldi</a>,
+                      </span>
+                      <span class="author-block">
+                        <a href="https://www.neeldey.com/">Neel Dey</a>
+                      </span>
+                      <span class="author-block">
+                        <a href="https://heejongkim.com/">Heejong Kim</a>,
+                      </span>
+                      <span class="author-block">
+                        <a href="http://engineering.nyu.edu/~gerig/">Guido Gerig</a>,
+                      </span>
+                    </div>
+          
+                    <div class="is-size-5 publication-authors">
+                      <span class="author-block">New York University</span>
+                    </div>
+          
+                    <div class="column has-text-centered">
+                      <div class="publication-links">
+                        <!-- PDF Link. -->
+                        <span class="link-block">
+                          <a href="https://link.springer.com/chapter/10.1007/978-3-030-78191-0_21"
+                             class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+                            <span>Paper</span>
+                          </a>
+                        </span>
+                        <span class="link-block">
+                          <a href="https://arxiv.org/pdf/2102.09462.pdf"
+                             class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="ai ai-arxiv"></i>
+                            </span>
+                            <span>arXiv</span>
+                          </a>
+                        </span>
+                        <!-- Video Link. -->
+                        <span class="link-block">
+                          <a href="https://www.youtube.com/watch?v=PiHGWiaty7s&t=34s"
+                             class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="fab fa-youtube"></i>
+                            </span>
+                            <span>Video</span>
+                          </a>
+                        </span>
+                        <!-- Code Link. -->
+                        <span class="link-block">
+                          <a href="https://github.com/google/nerfies"
+                             class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Code</span>
+                            </a>
+                        </span>
+                        <!-- Dataset Link. -->
+                        <span class="link-block">
+                          <a href="https://github.com/AxelElaldi/equivariant-spherical-deconvolution"
+                             class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="far fa-images"></i>
+                            </span>
+                            <span>Data</span>
+                            </a>
+                      </div>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="section">
+            <div class="container is-max-desktop">
+              <!-- Abstract. -->
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                  <h2 class="title is-3">Abstract</h2>
+                  <div class="content has-text-justified">
+                    <p>
+                        We present a rotation-equivariant self-supervised learning framework for the sparse deconvolution
+                        of non-negative scalar fields on the unit sphere. Spherical signals with multiple peaks naturally
+                        arise in Diffusion MRI (dMRI), where each voxel consists of one or more signal sources corresponding
+                        to anisotropic tissue structure such as white matter. Due to spatial and spectral partial voluming,
+                        clinically-feasible dMRI struggles to resolve crossing-fiber white matter configurations, leading
+                        to extensive development in spherical deconvolution methodology to recover underlying fiber
+                        directions. However, these methods are typically linear and struggle with small crossing-angles
+                        and partial volume fraction estimation. In this work, we improve on current methodologies by
+                        nonlinearly estimating fiber structures via self-supervised spherical convolutional networks
+                        with guaranteed equivariance to spherical rotation. We perform validation via extensive single
+                        and multi-shell synthetic benchmarks demonstrating competitive performance against common
+                        baselines. We further show improved downstream performance on fiber tractography measures on
+                        the Tractometer benchmark dataset. Finally, we show downstream improvements in terms of
+                        tractography and partial volume estimation on a multi-shell dataset of human subjects.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--/ Abstract. -->
+            
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a href="index1.html"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span>Equivariance</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="index2.html"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span>ESD 1 fiber</span>
+                    </a>
+                  </span>
+                  <!-- Video Link. -->
+                  <span class="link-block">
+                    <a href="index3.html"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span>ESD 2 fibers</span>
+                    </a>
+                  </span>
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a href="index4.html"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span>ESD vs CSD 2 fibers</span>
+                      </a>
+                  </span>
+              </div>
+
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                  <h2 class="title is-3">Equivariance to rotation</h2>
+                  <div class="publication-video">
+                    <p>Untrained ESD network on a synthetic 1 fiber diffusion signal</p>
+                    <label for="noiseInput" class="form-label">Rotation</label>
+                    <div class="form-group col-sm-6">
+                        <input type="range" min="1" max="359" class="custom-range" id="noiseInput">
+                    </div>
+                    
+                    <p>Input of the network | Estimated fODF | Input reconstruction</p>
+                    <span class="diagram"><canvas id="myCanvas"></canvas></span>
+                    <script src="js/index_equivariance.js"></script>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </section>
+
+
+        <div>Hello</div>
+        
+        
+        <!--reference your JS file here. Mine looks like below-->
+        
+	</body>
+</html>
